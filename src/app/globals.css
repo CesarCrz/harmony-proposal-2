@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: #FFF5F0;
+  --color-foreground: #2D1A2E;
+  --color-primary: #E91E8C;
+  --color-secondary: #F9C6D9;
+  --color-accent: #D4A853;
+  --color-light: #FDE8EF;
+  --color-muted: #5A4A5C;
+  --font-montserrat: var(--font-montserrat);
+  --font-inter: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #FFF5F0;
+  color: var(--color-foreground);
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
