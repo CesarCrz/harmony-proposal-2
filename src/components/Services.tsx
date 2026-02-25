@@ -62,7 +62,7 @@ export default function Services() {
   const [openFaqIndex, setOpenFaqIndex] = useState<string | null>(null);
 
   return (
-    <section id="servicios" className="pt-12 sm:pt-16 lg:pt-[220px] pb-16 sm:pb-20">
+    <section id="servicios" className="pt-14 sm:pt-20 lg:pt-24 pb-16 sm:pb-20">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         {/* Section header */}
         <motion.div
