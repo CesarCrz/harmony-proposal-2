@@ -1,92 +1,92 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Products() {
   return (
-    <section id="galeria" className="py-10 md:py-20 overflow-hidden">
-      <div className="max-w-[1532px] mx-auto px-8">
-        <h2 className="font-montserrat font-semibold text-3xl lg:text-[40px] text-[#E91E8C] text-center uppercase mb-10 md:mb-16">
-          Nuestro Portafolio
-        </h2>
+    <section id="galeria" className="py-12 sm:py-16 md:py-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-10 sm:mb-14 md:mb-16"
+        >
+          <span className="font-inter text-[12px] sm:text-[13px] text-primary uppercase tracking-[0.2em]">
+            Nuestro trabajo
+          </span>
+          <h2 className="font-montserrat font-semibold text-2xl sm:text-3xl lg:text-[40px] text-primary uppercase mt-3">
+            Nuestro Portafolio
+          </h2>
+        </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-6">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-5 lg:gap-6">
           {/* Main large image */}
-          <div className="relative w-full lg:w-[734px] h-[600px] lg:h-[972px] overflow-hidden group">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative w-full lg:w-[50%] xl:w-[734px] h-[400px] sm:h-[500px] lg:h-[900px] xl:h-[972px] overflow-hidden group"
+          >
             <Image
               src="/images/products-main.png"
-              alt="Diseños de uñas"
+              alt="Disenos de unas"
               fill
               className="object-cover"
             />
             {/* Gradient overlay */}
-            <div className="absolute inset-x-0 bottom-0 h-[370px] bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-[200px] sm:h-[300px] lg:h-[370px] bg-gradient-to-t from-black/60 to-transparent" />
             {/* Text overlay */}
-            <div className="absolute bottom-6 left-6 lg:bottom-20 lg:left-12 z-10">
-              <p className="font-montserrat text-[16px] text-[#f3f3f3] mb-2">
+            <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 lg:bottom-20 lg:left-12 z-10">
+              <p className="font-montserrat text-[13px] sm:text-[14px] lg:text-[16px] text-white/80 mb-1 sm:mb-2">
                 SERVICIO ESTRELLA
               </p>
-              <h3 className="font-montserrat font-semibold text-[40px] text-white uppercase mb-6">
-                Uñas Acrílicas
+              <h3 className="font-montserrat font-semibold text-[28px] sm:text-[34px] lg:text-[40px] text-white uppercase mb-4 sm:mb-6">
+                Unas Acrilicas
               </h3>
               <Link
-                href="#"
-                className="border border-white text-white font-montserrat text-[14px] uppercase rounded-full px-8 py-3 hover:bg-[#E91E8C] hover:border-[#E91E8C] transition-colors"
+                href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+                target="_blank"
+                className="border border-white text-white font-montserrat text-[12px] sm:text-[13px] lg:text-[14px] uppercase rounded-full px-6 sm:px-8 py-2.5 sm:py-3 hover:bg-primary hover:border-primary transition-colors tracking-wider"
               >
                 Agendar
               </Link>
             </div>
-          </div>
+          </motion.div>
 
           {/* Grid of 4 smaller images */}
-          <div className="flex-1 grid grid-cols-2 gap-6">
-            <div className="relative h-[280px] lg:h-[465px] overflow-hidden group">
-              <Image
-                src="/images/products-2.png"
-                alt="Pestañas"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-black/30" />
-              <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-montserrat font-semibold text-[20px] lg:text-[24px] text-white text-center uppercase">
-                Pestañas
-              </p>
-            </div>
-            <div className="relative h-[280px] lg:h-[465px] overflow-hidden group">
-              <Image
-                src="/images/products-3.png"
-                alt="Manicure Spa"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-black/30" />
-              <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-montserrat font-semibold text-[20px] lg:text-[24px] text-white text-center uppercase">
-                Manicure Spa
-              </p>
-            </div>
-            <div className="relative h-[280px] lg:h-[465px] overflow-hidden group">
-              <Image
-                src="/images/products-4.png"
-                alt="Diseños Personalizados"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-black/30" />
-              <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-montserrat font-semibold text-[20px] lg:text-[24px] text-white text-center uppercase">
-                Diseños Únicos
-              </p>
-            </div>
-            <div className="relative h-[280px] lg:h-[465px] overflow-hidden group">
-              <Image
-                src="/images/products-5.png"
-                alt="Pedicure Spa"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-black/30" />
-              <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-montserrat font-semibold text-[20px] lg:text-[24px] text-white text-center uppercase">
-                Pedicure Spa
-              </p>
-            </div>
+          <div className="flex-1 grid grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+            {[
+              { src: "/images/products-2.png", alt: "Pestanas", label: "Pestanas" },
+              { src: "/images/products-3.png", alt: "Manicure Spa", label: "Manicure Spa" },
+              { src: "/images/products-4.png", alt: "Disenos Personalizados", label: "Disenos Unicos" },
+              { src: "/images/products-5.png", alt: "Pedicure Spa", label: "Pedicure Spa" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                className="relative h-[180px] sm:h-[240px] lg:h-[430px] xl:h-[465px] overflow-hidden group cursor-pointer"
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
+                <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-montserrat font-semibold text-[16px] sm:text-[18px] lg:text-[22px] xl:text-[24px] text-white text-center uppercase">
+                  {item.label}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

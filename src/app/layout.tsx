@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -12,10 +12,17 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#E91E8C",
+};
+
 export const metadata: Metadata = {
-  title: "Harmony Nails & Lashes - Uñas Acrílicas y Pestañas en Guadalajara Sur",
+  title: "Harmony Nails & Lashes - Unas Acrilicas y Pestanas en Guadalajara Sur",
   description:
-    "Diseños personalizados de uñas acrílicas, pestañas y más. 17 años de experiencia combinada. Agenda tu cita en Guadalajara zona sur, cerca de ITESO.",
+    "Disenos personalizados de unas acrilicas, pestanas y mas. 17 anos de experiencia combinada. Agenda tu cita en Guadalajara zona sur, cerca de ITESO.",
 };
 
 export default function RootLayout({
