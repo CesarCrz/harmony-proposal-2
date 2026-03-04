@@ -130,6 +130,23 @@ export default function Header() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="lg:hidden fixed inset-0 top-0 bg-white z-40 flex flex-col items-center justify-center overflow-hidden"
           >
+            {/* X close button */}
+            <motion.button
+              className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-foreground hover:text-primary transition-colors"
+              onClick={() => setIsOpen(false)}
+              aria-label="Cerrar menú"
+              initial={{ opacity: 0, rotate: -90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              exit={{ opacity: 0, rotate: -90 }}
+              transition={{ duration: 0.25, delay: 0.15 }}
+              whileTap={{ scale: 0.85 }}
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </motion.button>
+
             <nav className="flex flex-col items-center gap-6">
               {navLinks.map((link, i) => (
                 <motion.div

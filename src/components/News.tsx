@@ -7,16 +7,16 @@ const founders = [
   {
     image: "/images/news-1.png",
     tag: "Fundadora",
-    name: "Kattya (Kath)",
+    name: "Kathya",
     description:
-      "10 anos de experiencia en el mundo de las unas. Kath es la persona que acciona, la que impulsa las decisiones. Su rapidez y pasion por el arte son lo que la caracteriza. Su sueno es llevar la esencia de Harmony a mas personas a traves de varias sucursales.",
+      "10 años de experiencia en el mundo de las unas. Kath es la persona que acciona, la que impulsa las decisiones. Su rapidez y pasión por el arte son lo que la caracteriza. Su sueño es llevar la esencia de Harmony a mas personas a traves de varias sucursales.",
   },
   {
     image: "/images/news-2.png",
     tag: "Fundadora",
     name: "Victoria",
     description:
-      "7 anos de experiencia en belleza profesional. Victoria es la persona que piensa, que plantea y estructura las cosas. Su vision y dedicacion han sido fundamentales para el crecimiento de Harmony desde sus inicios.",
+      "7 años de experiencia en belleza profesional. Victoria es la persona que piensa, que plantea y estructura las cosas. Su visión y dedicación han sido fundamentales para el crecimiento de Harmony desde sus inicios.",
   },
 ];
 

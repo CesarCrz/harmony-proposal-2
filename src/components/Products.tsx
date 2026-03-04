@@ -33,8 +33,8 @@ export default function Products() {
             className="relative w-full lg:w-[50%] xl:w-[734px] h-[400px] sm:h-[500px] lg:h-[900px] xl:h-[972px] overflow-hidden group"
           >
             <Image
-              src="/images/products-main.png"
-              alt="Disenos de unas"
+              src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1772660733/IMG_8057_uxryru_leeqk1.jpg"
+              alt="diseños de uñas"
               fill
               className="object-cover"
             />
@@ -46,7 +46,7 @@ export default function Products() {
                 SERVICIO ESTRELLA
               </p>
               <h3 className="font-montserrat font-semibold text-[28px] sm:text-[34px] lg:text-[40px] text-white uppercase mb-4 sm:mb-6">
-                Unas Acrilicas
+                Uñas Acrílicas
               </h3>
               <Link
                 href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
@@ -61,10 +61,10 @@ export default function Products() {
           {/* Grid of 4 smaller images */}
           <div className="flex-1 grid grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
             {[
-              { src: "/images/products-2.png", alt: "Pestanas", label: "Pestanas" },
-              { src: "/images/products-3.png", alt: "Manicure Spa", label: "Manicure Spa" },
-              { src: "/images/products-4.png", alt: "Disenos Personalizados", label: "Disenos Unicos" },
-              { src: "/images/products-5.png", alt: "Pedicure Spa", label: "Pedicure Spa" },
+              { src: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772661771/IMG_9206_u4qak0_eiwm3e.jpg", alt: "pestañas", label: "pestañas" },
+              { src: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772660972/IMG_8155_jsovz9_pxs9jl.jpg", alt: "Manicure Spa", label: "Manicure Spa" },
+              { src: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772660972/IMG_9362_pniyle_edufst.jpg", alt: "diseños Personalizados", label: "diseños Unicos" },
+              { src: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772660973/IMG_7583_inipcg_azeqvf.jpg", alt: "Pedicure Spa", label: "Pedicure Spa" },
             ].map((item, i) => (
               <motion.div
                 key={i}

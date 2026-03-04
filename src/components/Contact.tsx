@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section id="contacto" className="py-12 sm:py-16 md:py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="flex flex-col md:flex-row items-start gap-10 sm:gap-14 lg:gap-16">
+        <div className="flex flex-col md:flex-row md:items-start gap-10 sm:gap-14 lg:gap-16">
           {/* Google Maps */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}

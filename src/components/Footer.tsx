@@ -25,7 +25,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-montserrat text-[13px] sm:text-[14px] text-white/70 leading-[22px]">
-              Gracias a ti por apoyar nuestro sueno que se ha construido con mucho amor.
+              Gracias a ti por apoyar nuestro sueño que se ha construido con mucho amor.
             </p>
           </div>
 
@@ -120,6 +120,9 @@ export default function Footer() {
               Aviso de Privacidad
             </Link>
           </div>
+                    <p className="font-montserrat text-[13px] sm:text-[16px] text-white/60 text-center sm:text-left">
+            Impulsado por <a href="https://www.instagram.com/activodigital_mx/"><b>Activo digital</b></a>
+          </p>
         </motion.div>
       </div>
     </footer>

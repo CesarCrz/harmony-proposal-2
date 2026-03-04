@@ -1,52 +1,103 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoFading, setVideoFading] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const FADE_BEFORE_END = 1.1; // seconds before end to start fade-to-dark
+    let fadingOut = false;
+
+    const handleTimeUpdate = () => {
+      if (!video.duration) return;
+      const remaining = video.duration - video.currentTime;
+
+      if (remaining <= FADE_BEFORE_END && !fadingOut) {
+        fadingOut = true;
+        setVideoFading(true);
+      } else if (video.currentTime < 0.5 && fadingOut) {
+        // Video has looped back — wait a beat then fade back in
+        fadingOut = false;
+        setTimeout(() => setVideoFading(false), 180);
+      }
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+  }, []);
+
   return (
     <section id="inicio" className="relative overflow-hidden">
       {/* =================== HERO IMAGE AREA =================== */}
       <div className="relative min-h-[100svh] lg:h-[920px]">
-        {/* Background image */}
-        <div className="absolute inset-0 lg:left-auto lg:w-[55%]">
-          <Image
-            src="/images/hero-main.png"
-            alt="Harmony Nails & Lashes"
-            fill
-            className="object-cover"
-            priority
+        {/* Background — video on all screen sizes */}
+        <div className="absolute inset-0 lg:left-auto lg:w-[55%] overflow-hidden">
+          {/* Video: portrait 9:16 — object-cover crops naturally, "center top" keeps subject
+              visible and pushes the bottom watermark area out of frame on all screen sizes */}
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/hero-main.png"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              objectPosition: "center top",
+              filter: "contrast(1.06) saturate(1.08)",
+            }}
+          >
+            <source src="/video-hero.mp4" type="video/mp4" />
+          </video>
+          {/* Seamless loop fade overlay — fades to dark just before loop, fades back after */}
+          <div
+            className="absolute inset-0 bg-black pointer-events-none z-[2]"
+            style={{
+              opacity: videoFading ? 0.88 : 0,
+              transition: `opacity ${videoFading ? "900ms" : "1300ms"} ease-in-out`,
+            }}
           />
+          {/* Thin gradient at very bottom — masks any watermark remnant */}
+          <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-[1]" />
         </div>
 
         {/* Gradient overlay for mobile readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60 lg:hidden" />
 
-        {/* Secondary image - desktop only */}
+        {/* Secondary image - desktop only - scales with viewport */}
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden lg:block absolute top-[267px] left-[38%] w-[438px] h-[610px] rounded-t-[219px] overflow-hidden shadow-[20px_20px_30px_0px_rgba(0,0,0,0.16)] z-10"
+          className="hidden lg:block absolute top-[267px] w-[438px] h-[610px] rounded-t-[219px] overflow-hidden shadow-[20px_20px_30px_0px_rgba(0,0,0,0.16)] z-10"
+          style={{ left: 'clamp(30%, 38%, 42%)' }}
         >
           <Image
-            src="/images/hero-secondary.png"
+            src="/images/hero-img2174.png"
             alt="Diseno de unas"
             fill
             className="object-cover"
           />
         </motion.div>
 
-        {/* Hand image - desktop only */}
+        {/* Hand image - desktop only - centered in the beige area (45% left side) */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.4, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden lg:block absolute top-[282px] left-[12%] w-[441px] h-[294px] z-20"
+          className="hidden lg:block absolute top-[282px] w-[441px] h-[294px] z-20"
+          style={{ left: 'clamp(40px, calc(22.5% - 220px), 12%)' }}
         >
           <Image
-            src="/images/hero-hand.png"
+            src="/images/hero-img1893.png"
             alt="Arte en unas"
             fill
             className="object-cover"
@@ -63,7 +114,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="font-inter text-[13px] text-foreground/50 uppercase tracking-[0.25em] mb-4"
               >
-                17 anos de experiencia
+                17 años de experiencia
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -95,7 +146,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-montserrat text-[13px] sm:text-[14px] text-white/80 uppercase tracking-[0.2em] mb-3"
           >
-            17 anos de experiencia
+            17 años de experiencia
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -149,7 +200,7 @@ export default function Hero() {
                     </svg>
                   ),
                   label: "Horario",
-                  value: "Lun - Vie: 10AM - 7PM",
+                  value: "Lun - Sáb: 10AM - 7PM",
                 },
                 {
                   icon: (
@@ -158,8 +209,8 @@ export default function Hero() {
                       <circle cx="12" cy="10" r="3" />
                     </svg>
                   ),
-                  label: "Ubicacion",
-                  value: "Guadalajara Sur",
+                  label: "Ubicación",
+                  value: "Av. Agrícola 641 L1, Tlaquepaque",
                 },
                 {
                   icon: (
@@ -177,8 +228,8 @@ export default function Hero() {
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     </svg>
                   ),
-                  label: "Garantia",
-                  value: "3 dias en unas y pestanas",
+                  label: "Garantía",
+                  value: "3 días en uñas y pestañas",
                 },
               ].map((item, i) => (
                 <div
@@ -269,7 +320,7 @@ export default function Hero() {
                 </svg>
               ),
               label: "Garantia",
-              value: "3 dias en unas y pestanas",
+              value: "3 dias en uñas y pestañas",
             },
           ].map((item, i) => (
             <div

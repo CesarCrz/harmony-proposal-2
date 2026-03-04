@@ -5,16 +5,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const gridImages = [
-  "/images/grid-1.png",
-  "/images/grid-2.png",
-  "/images/grid-3.png",
-  "/images/grid-10.png",
-  "/images/grid-4.png",
-  "/images/grid-7.png",
-  "/images/grid-5.png",
-  "/images/grid-8.png",
-  "/images/grid-6.png",
-  "/images/grid-9.png",
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772660972/IMG_8635_mydqsd_d20f7h.jpg",
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772662726/IMG_5951_gpkkse_r1rm20.jpg",
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1770660560/harmony_1_payacj.jpg", 
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772662727/IMG_4612_r2jcyi_uckxt9.jpg",
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772662721/IMG_8156_avafem_yepz8q.jpg",
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772662725/IMG_2187_gfavrc_nndnzr.jpg",
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772658568/IMG_2174_snbzve_njkmao.jpg", 
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1770660561/harmony_4_zs0a1p.jpg",
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1770660559/harmony_6_n6jsun.jpg",
+  "https://res.cloudinary.com/dwoau0ajc/image/upload/v1772663003/IMG_9174_autg8y_ygvuij.jpg",
 ];
 
 export default function FollowUs() {

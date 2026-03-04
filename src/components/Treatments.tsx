@@ -7,32 +7,60 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const treatments = [
   {
-    name: "Unas Acrilicas",
-    description: "Disenos personalizados",
+    name: "Uñas Acrílicas / Polygel",
+    description: "Técnica escultural, mani express y gel de color liso. Diseños únicos y personalizados.",
     price: "Consulta precios",
     hasWarranty: true,
-    faq: { question: "Cada cuanto retoque?", answer: "Cada 2 a 3 semanas." },
+    faq: { question: "¿Cada cuánto se hace el mantenimiento?", answer: "De 15 a 20 días máximo. Aplica en acrílico, polygel, rubber gel, sistema híbrido y gel semi permanente." },
   },
   {
-    name: "Pestanas",
-    description: "Aplicacion profesional",
+    name: "Extensiones de Pestañas",
+    description: "Clásica, híbrida, tecnológica/volumen y mega volumen artesanal.",
+    price: "Consulta precios",
+    hasWarranty: false,
+    faq: { question: "¿Cuándo se recomienda el relleno?", answer: "Se recomienda el retoque o relleno cada 2 a 3 semanas para mantener el volumen y la apariencia deseada." },
+  },
+  {
+    name: "Nivelación Rubber Gel / Gel Semi Permanente",
+    description: "Rubber gel: nivelación en uña natural con mani express y gel de color. Gel semi permanente: color liso sobre uña natural.",
     price: "Consulta precios",
     hasWarranty: true,
-    faq: { question: "Cuanto duran?", answer: "De 2 a 3 semanas con cuidado." },
+    faq: { question: "¿Cuánto dura?", answer: "El mantenimiento recomendado es de 15 a 20 días para ambos servicios." },
   },
   {
-    name: "Rubber",
-    description: "Acabado natural y flexible",
+    name: "Sistema Híbrido",
+    description: "Polygel escultural o sobre uña natural, nivelación de rubber gel, mani express y gel de color liso.",
     price: "Consulta precios",
-    hasWarranty: false,
-    faq: { question: "Que es?", answer: "Base de gel flexible sobre la una natural." },
+    hasWarranty: true,
+    faq: { question: "¿Qué es el sistema híbrido?", answer: "Combina polygel con rubber gel para mayor resistencia y flexibilidad que los sistemas tradicionales." },
   },
   {
-    name: "Manicure & Pedicure Spa",
-    description: "Consentimiento completo",
+    name: "Manicura Rusa",
+    description: "Limpieza de cutícula profunda en seco y gel de color liso. Técnica de precisión con acabado ultra limpio.",
     price: "Consulta precios",
     hasWarranty: false,
-    faq: { question: "Que incluye?", answer: "Limpieza, exfoliacion, masaje y esmaltado." },
+    faq: { question: "¿Qué la diferencia de la tradicional?", answer: "Se realiza en seco con fresa eléctrica, permitiendo una limpieza de cutícula mucho más profunda y precisa." },
+  },
+  {
+    name: "Manicura Spa & Pedicure Spa",
+    description: "Manicura: sales, exfoliante, mascarilla, limpieza de cutícula, corte y gel. Pedicure: incluye canales y callosidades.",
+    price: "Consulta precios",
+    hasWarranty: false,
+    faq: { question: "¿Qué incluye el pedicure spa?", answer: "Sales, exfoliante, mascarilla, limpieza de canales, cutícula, callosidades y gel de color liso." },
+  },
+  {
+    name: "Lash Lifting",
+    description: "Rizado de pestañas naturales. Levanta y ondula tu pestaña propia para una mirada más abierta y expresiva.",
+    price: "Consulta precios",
+    hasWarranty: false,
+    faq: { question: "¿Cuánto dura el efecto?", answer: "Entre 6 y 8 semanas, dependiendo del ciclo natural de crecimiento de tus pestañas." },
+  },
+  {
+    name: "Diseño de Ceja",
+    description: "Diseño con visagismo, contorno de hilos con pigmento, depilación de ceja y laminado.",
+    price: "Consulta precios",
+    hasWarranty: false,
+    faq: { question: "¿Qué incluye el servicio?", answer: "Diseño con visagismo, contorno con hilo y pigmento, depilación y opción de laminado de ceja." },
   },
 ];
 
@@ -143,10 +171,10 @@ export default function Treatments() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full lg:w-[45%] xl:w-[50%] h-[350px] sm:h-[450px] lg:h-[650px] xl:h-[704px] overflow-hidden flex-shrink-0"
+            className="w-full lg:w-[45%] xl:w-[50%] h-[350px] sm:h-[450px] lg:h-[650px] xl:h-[704px] overflow-hidden flex-shrink-0 lg:self-center"
           >
             <Image
-              src="/images/treatments-image.png"
+              src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1772642049/IMG_9644_iij76j.jpg"
               alt="Servicios Harmony"
               width={766}
               height={704}

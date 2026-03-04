@@ -1,10 +1,26 @@
 "use client";
 
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function OurStory() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
   return (
     <section id="nosotros" className="py-16 sm:py-20 lg:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
@@ -17,11 +33,11 @@ export default function OurStory() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex-shrink-0 w-full lg:w-auto"
           >
-            {/* Main image */}
-            <div className="w-full max-w-[500px] lg:max-w-none lg:w-[560px] xl:w-[620px] h-[320px] sm:h-[420px] md:h-[500px] lg:h-[650px] overflow-hidden">
+            {/* Main image — aspect ratio matches photo exactly (663×704), zero cropping */}
+            <div className="w-full max-w-[500px] lg:max-w-none lg:w-[560px] xl:w-[620px] aspect-[663/704] overflow-hidden">
               <Image
-                src="/images/story-main.png"
-                alt="Kattya y Victoria - Fundadoras"
+                src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1772659286/IMG_1510_a5zdh9.png"
+                alt="Kathya y Victoria - Fundadoras"
                 width={663}
                 height={704}
                 className="w-full h-full object-cover"
@@ -33,15 +49,37 @@ export default function OurStory() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden sm:block absolute -bottom-8 -right-4 sm:-bottom-10 sm:right-4 lg:right-[-60px] lg:-bottom-12 w-[200px] sm:w-[260px] lg:w-[320px] xl:w-[350px] h-[260px] sm:h-[320px] lg:h-[390px] xl:h-[420px] rounded-t-[160px] lg:rounded-t-[180px] overflow-hidden shadow-[-15px_-15px_30px_0px_rgba(0,0,0,0.12)] z-10"
+              className="hidden sm:block absolute -bottom-8 -right-4 sm:-bottom-10 sm:right-4 lg:right-[-60px] lg:-bottom-12 w-[200px] sm:w-[260px] lg:w-[320px] xl:w-[350px] h-[260px] sm:h-[320px] lg:h-[390px] xl:h-[420px] rounded-t-[160px] lg:rounded-t-[180px] overflow-hidden shadow-[-15px_-15px_30px_0px_rgba(0,0,0,0.12)] z-10 cursor-pointer"
+              onClick={togglePlay}
             >
-              <Image
-                src="/images/story-secondary.png"
-                alt="Harmony Nails & Lashes"
-                width={373}
-                height={438}
+              <video
+                ref={videoRef}
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover"
-              />
+              >
+                <source src="https://res.cloudinary.com/dwoau0ajc/video/upload/v1772642059/IMG_1695_asce3q.mp4" type="video/mp4" />
+              </video>
+              {/* Play indicator — visible only when paused */}
+              <AnimatePresence>
+                {!isPlaying && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute inset-0 flex items-center justify-center bg-black/25 pointer-events-none"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center shadow-lg">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="#1d1d1e">
+                        <polygon points="5,3 19,12 5,21" />
+                      </svg>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           </motion.div>
 
@@ -61,7 +99,7 @@ export default function OurStory() {
             </h2>
             <div className="font-montserrat text-[14px] sm:text-[16px] leading-[24px] sm:leading-[27px] text-muted space-y-5 max-w-[440px]">
               <p>
-                Harmony nacio de forma espontanea. Kattya y Victoria se conocieron trabajando en el mismo lugar, pero el ambiente se torno agotador. Decidieron aliarse y empezar desde cero con 10,000 pesos que sus abuelitas les dieron a cada una.
+                Harmony nacio de forma espontanea. Kathya y Victoria se conocieron trabajando en el mismo lugar, pero el ambiente se torno agotador. Decidieron aliarse y empezar desde cero con 10,000 pesos que sus abuelitas les dieron a cada una.
               </p>
               <p>
                 <span className="font-semibold text-foreground">Amor y Calidez</span>

@@ -6,53 +6,50 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
   {
-    icon: "/images/service-1.svg",
-    title: "Unas Acrilicas",
+    icon: "/images/finger-icon.png",
+    title: "Uñas Acrílicas / Polygel",
     description:
-      "Disenos personalizados y unicos para cada clienta. Nuestro servicio estrella con materiales de la mas alta calidad.",
+      "Uñas acrílicas o polygel en técnica escultural, mani express y gel de color liso. Diseños únicos con materiales de primera calidad.",
     hasWarranty: true,
     faqs: [
       {
-        question: "Cada cuanto se hace el retoque?",
-        answer: "Se recomienda cada 2 a 3 semanas para mantener tus unas en perfecto estado.",
+        question: "¿Cada cuánto debo hacer mantenimiento?",
+        answer: "Lo recomendable es de 15 a 20 días máximo. Aplica en acrílico, polygel, rubber gel, sistema híbrido y gel semi permanente.",
       },
       {
-        question: "Cuanto duran?",
-        answer: "Con el cuidado adecuado, duran de 3 a 4 semanas antes de necesitar retoque.",
+        question: "¿Qué cubre la garantía de 3 días?",
+        answer: "Levantamiento prematuro de gel o acrílico durante los primeros 3 días después de la aplicación.",
       },
     ],
   },
   {
-    icon: "/images/service-2.svg",
-    title: "Pestanas",
+    icon: "/images/lashes-icon.png",
+    largeIcon: true,
+    title: "Extensiones de Pestañas",
     description:
-      "Aplicacion profesional que realza tu mirada de forma natural. Diferentes estilos para adaptarse a tu personalidad.",
-    hasWarranty: true,
+      "Técnica clásica, híbrida, tecnológica/volumen y mega volumen artesanal. Realzamos tu mirada con el estilo que más te favorezca.",
+    hasWarranty: false,
     faqs: [
       {
-        question: "Cuanto duran las pestanas?",
-        answer: "Aproximadamente de 2 a 3 semanas dependiendo del cuidado y ciclo natural.",
-      },
-      {
-        question: "Cada cuanto necesito retoque?",
-        answer: "Se recomienda retoque cada 2 a 3 semanas para mantener volumen.",
+        question: "¿Qué técnicas manejan?",
+        answer: "Clásica (1:1), híbrida, tecnológica/volumen y mega volumen artesanal. En consulta te orientamos sobre la ideal para ti.",
       },
     ],
   },
   {
     icon: "/images/service-3.svg",
-    title: "Manicure & Pedicure Spa",
+    title: "Manicura Spa & Pedicure Spa",
     description:
-      "Experiencia completa de consentimiento. Limpieza profunda, exfoliacion, hidratacion y esmaltado profesional.",
+      "Manicura Spa: sales, exfoliante, mascarilla, limpieza de cutícula, corte y gel de color. Pedicure Spa: completo con limpieza de canales y callosidades.",
     hasWarranty: false,
     faqs: [
       {
-        question: "Que incluye el servicio?",
-        answer: "Limpieza de cuticula, exfoliacion, masaje hidratante, corte, limado y esmaltado.",
+        question: "¿Qué incluye el Manicure Spa?",
+        answer: "Sales, exfoliante, mascarilla, limpieza de cutícula, corte, cuadratura y gel de color liso.",
       },
       {
-        question: "Cuanto dura la sesion?",
-        answer: "Manicure: 45 min a 1 hora. Pedicure: 1 a 1.5 horas.",
+        question: "¿Qué incluye el Pedicure Spa?",
+        answer: "Sales, exfoliante, mascarilla, limpieza de canales, cutícula, callosidades y gel de color liso.",
       },
     ],
   },
@@ -107,8 +104,11 @@ export default function Services() {
                 <Image
                   src={service.icon}
                   alt={service.title}
-                  width={125}
-                  height={122}
+                  width={service.largeIcon ? 158 : 125}
+                  height={service.largeIcon ? 150 : 122}
+                  style={service.icon.endsWith(".png") ? {
+                    filter: "brightness(0) saturate(100%) invert(71%) sepia(35%) saturate(320%) hue-rotate(350deg) brightness(93%)",
+                  } : undefined}
                 />
               </div>
 
