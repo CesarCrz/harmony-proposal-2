@@ -35,7 +35,7 @@ const treatments = [
     faq: { question: "¿Qué es el sistema híbrido?", answer: "Combina polygel con rubber gel para mayor resistencia y flexibilidad que los sistemas tradicionales." },
   },
   {
-    name: "Manicura Rusa",
+    name: "Manicura Russa",
     description: "Limpieza de cutícula profunda en seco y gel de color liso. Técnica de precisión con acabado ultra limpio.",
     price: "Consulta precios",
     hasWarranty: false,

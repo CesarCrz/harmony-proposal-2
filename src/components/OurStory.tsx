@@ -99,17 +99,17 @@ export default function OurStory() {
             </h2>
             <div className="font-montserrat text-[14px] sm:text-[16px] leading-[24px] sm:leading-[27px] text-muted space-y-5 max-w-[440px]">
               <p>
-                Harmony nacio de forma espontanea. Kathya y Victoria se conocieron trabajando en el mismo lugar, pero el ambiente se torno agotador. Decidieron aliarse y empezar desde cero con 10,000 pesos que sus abuelitas les dieron a cada una.
+                Harmony nació de algo espontáneo. Kathya y Victoria se conocieron trabajando juntas, pero el ambiente comenzó a pesarles. Fue Kath quien tomó la decisión de salir, y Victoria se sumó sin pensarlo dos veces. Con el apoyo de sus familias y años de experiencia en el gremio, se lanzaron a crear algo propio.
               </p>
               <p>
                 <span className="font-semibold text-foreground">Amor y Calidez</span>
                 <br />
-                Empezaron con una cubeta y un banco, pero el amor fue lo que hizo que el negocio se sintiera ameno con el pasar de los dias.
+                Empezaron desde lo más básico, pasaron por locales difíciles y momentos de incertidumbre, pero el amor y la calidez que las caracterizan nunca faltaron. Cada obstáculo las hizo más fuertes y más unidas.
               </p>
               <p>
-                <span className="font-semibold text-foreground">Pasion y Arte</span>
+                <span className="font-semibold text-foreground">Pasión y Arte</span>
                 <br />
-                {'"Harmony es nuestro lugar seguro, es nuestra terapia, nos ha dado la motivacion de seguir adelante."'}
+                {'"Harmony es nuestro lugar seguro, es nuestra terapia, nos ha levantado y nos ha dado el hambre de seguir adelante."'}
               </p>
             </div>
             <motion.div
