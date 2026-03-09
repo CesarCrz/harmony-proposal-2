@@ -1,24 +1,70 @@
 "use client";
 
-import Image from "next/image";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const founders = [
   {
-    image: "/images/news-1.png",
+    video: "https://res.cloudinary.com/dwoau0ajc/video/upload/v1773081620/video_kath_xrueji.mp4",
     tag: "Fundadora",
     name: "Kathya",
     description:
-      "10 años de experiencia en el mundo de las unas. Kath es la persona que acciona, la que impulsa las decisiones. Su rapidez y pasión por el arte son lo que la caracteriza. Su sueño es llevar la esencia de Harmony a mas personas a traves de varias sucursales.",
+      "10 años de experiencia en el mundo de las uñas. Kath es la persona que acciona, la que impulsa las decisiones. Su rapidez y pasión por el arte son lo que la caracteriza. Su sueño es llevar la esencia de Harmony a mas personas a traves de varias sucursales.",
   },
   {
-    image: "/images/news-2.png",
+    video: "https://res.cloudinary.com/dwoau0ajc/video/upload/v1773081621/video_vic_rajdwu.mp4",
     tag: "Fundadora",
     name: "Victoria",
     description:
       "7 años de experiencia en belleza profesional. Victoria es la persona que piensa, que plantea y estructura las cosas. Su visión y dedicación han sido fundamentales para el crecimiento de Harmony desde sus inicios.",
   },
 ];
+
+function FounderVideo({ src, name }: { src: string; name: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  function handleClick() {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  }
+
+  return (
+    <div
+      className="relative w-full h-[300px] sm:h-[400px] md:h-[480px] lg:h-[600px] xl:h-[666px] overflow-hidden cursor-pointer"
+      onClick={handleClick}
+    >
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-label={name}
+        className="w-full h-full object-cover"
+      />
+
+      {/* Play icon overlay — visible only when paused */}
+      {!isPlaying && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+          <div className="w-16 h-16 rounded-full bg-white/85 flex items-center justify-center">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#1d1d1e">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function News() {
   return (
@@ -49,14 +95,8 @@ export default function News() {
               transition={{ duration: 0.7, delay: index * 0.2 }}
               className="group"
             >
-              {/* Image */}
-              <div className="relative w-full h-[300px] sm:h-[400px] md:h-[480px] lg:h-[600px] xl:h-[666px] overflow-hidden mb-5 sm:mb-6">
-                <Image
-                  src={founder.image}
-                  alt={founder.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+              <div className="mb-5 sm:mb-6">
+                <FounderVideo src={founder.video} name={founder.name} />
               </div>
 
               {/* Content */}
