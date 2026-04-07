@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -83,14 +84,21 @@ export default function Header() {
 
         {/* Book Button - desktop */}
         <Link
-          href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+          href="https://harmony.wlbookings.com/"
           target="_blank"
-          className={`hidden lg:block rounded-full px-7 py-2.5 font-montserrat text-[13px] uppercase tracking-wider transition-all duration-500 ${
+          className={`hidden lg:inline-flex items-center gap-1.5 rounded-full px-7 py-2.5 font-montserrat text-[13px] uppercase tracking-wider transition-all duration-500 ${
             scrolled
               ? "bg-primary text-white hover:bg-primary/90"
               : "border border-white text-white hover:bg-primary hover:border-primary"
           }`}
         >
+          <Image
+            src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon2_1_kddd7x.png"
+            alt=""
+            width={15}
+            height={15}
+            className="object-contain"
+          />
           Agendar
         </Link>
 
@@ -172,7 +180,7 @@ export default function Header() {
                 transition={{ delay: navLinks.length * 0.08, duration: 0.4 }}
               >
                 <Link
-                  href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+                  href="https://harmony.wlbookings.com/"
                   target="_blank"
                   onClick={() => setIsOpen(false)}
                   className="mt-4 inline-block bg-primary rounded-full px-10 py-3.5 font-montserrat text-[15px] text-white uppercase tracking-wider hover:bg-primary/90 transition-colors"

@@ -1,78 +1,35 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoFading, setVideoFading] = useState(false);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const FADE_BEFORE_END = 1.1; // seconds before end to start fade-to-dark
-    let fadingOut = false;
-
-    const handleTimeUpdate = () => {
-      if (!video.duration) return;
-      const remaining = video.duration - video.currentTime;
-
-      if (remaining <= FADE_BEFORE_END && !fadingOut) {
-        fadingOut = true;
-        setVideoFading(true);
-      } else if (video.currentTime < 0.5 && fadingOut) {
-        // Video has looped back — wait a beat then fade back in
-        fadingOut = false;
-        setTimeout(() => setVideoFading(false), 180);
-      }
-    };
-
-    video.addEventListener("timeupdate", handleTimeUpdate);
-    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
-  }, []);
-
   return (
     <section id="inicio" className="relative overflow-hidden">
       {/* =================== HERO IMAGE AREA =================== */}
       <div className="relative min-h-[100svh] lg:h-[920px]">
-        {/* Background — video on all screen sizes */}
+        {/* Background image — right 55% on desktop, full screen on mobile */}
         <div className="absolute inset-0 lg:left-auto lg:w-[55%] overflow-hidden">
-          {/* Video: portrait 9:16 — object-cover crops naturally, "center top" keeps subject
-              visible and pushes the bottom watermark area out of frame on all screen sizes */}
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/images/hero-main.png"
-            className="absolute inset-0 w-full h-full object-cover"
+          <Image
+            src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775001018/WhatsApp_Image_2026-03-31_at_17.49.29_ywowjm.jpg"
+            alt="Harmony Nails & Lashes"
+            fill
+            priority
+            className="object-cover"
             style={{
               objectPosition: "center top",
               filter: "contrast(1.06) saturate(1.08)",
             }}
-          >
-            <source src="/video-hero.mp4" type="video/mp4" />
-          </video>
-          {/* Seamless loop fade overlay — fades to dark just before loop, fades back after */}
-          <div
-            className="absolute inset-0 bg-black pointer-events-none z-[2]"
-            style={{
-              opacity: videoFading ? 0.88 : 0,
-              transition: `opacity ${videoFading ? "900ms" : "1300ms"} ease-in-out`,
-            }}
           />
-          {/* Thin gradient at very bottom — masks any watermark remnant */}
-          <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-[1]" />
+          {/* Thin gradient at very bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-[1]" />
         </div>
 
         {/* Gradient overlay for mobile readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60 lg:hidden" />
 
-        {/* Secondary image - desktop only - scales with viewport */}
+        {/* Secondary image - desktop only - arch shape */}
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -81,14 +38,14 @@ export default function Hero() {
           style={{ left: 'clamp(30%, 38%, 42%)' }}
         >
           <Image
-            src="/images/hero-img2174.png"
-            alt="Diseno de unas"
+            src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775001018/WhatsApp_Image_2026-03-31_at_17.49.29_2_wbgfvd.jpg"
+            alt="Diseño de uñas"
             fill
             className="object-cover"
           />
         </motion.div>
 
-        {/* Hand image - desktop only - centered in the beige area (45% left side) */}
+        {/* Floating nail image - desktop only */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
@@ -97,14 +54,14 @@ export default function Hero() {
           style={{ left: 'clamp(40px, calc(22.5% - 220px), 12%)' }}
         >
           <Image
-            src="/images/hero-img1893.png"
-            alt="Arte en unas"
+            src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775539216/Gemini_Generated_Image_ttx9s8ttx9s8ttx9-removebg-preview_fsxp1c.png"
+            alt="Arte en uñas"
             fill
-            className="object-cover"
+            className="object-contain"
           />
         </motion.div>
 
-        {/* ===== SLOGAN OVERLAY - Desktop (over images area, left side) ===== */}
+        {/* ===== SLOGAN OVERLAY - Desktop ===== */}
         <div className="hidden lg:flex absolute inset-0 z-20 items-end pb-16">
           <div className="max-w-7xl mx-auto px-8 w-full">
             <div className="max-w-[500px]">
@@ -138,7 +95,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ===== Mobile hero content with slogan ===== */}
+        {/* ===== Mobile hero content ===== */}
         <div className="lg:hidden absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -170,7 +127,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.9 }}
           >
             <Link
-              href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+              href="https://harmony.wlbookings.com/"
               target="_blank"
               className="inline-block mt-7 bg-white text-foreground font-montserrat text-[13px] sm:text-[14px] uppercase rounded-full px-8 py-3.5 hover:bg-white/90 transition-colors tracking-wider font-semibold"
             >
@@ -190,7 +147,6 @@ export default function Hero() {
         <div className="bg-foreground">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-stretch">
-              {/* Info items */}
               {[
                 {
                   icon: (
@@ -250,17 +206,11 @@ export default function Hero() {
 
               {/* CTA Button */}
               <Link
-                href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+                href="https://harmony.wlbookings.com/"
                 target="_blank"
                 className="flex items-center gap-3 bg-primary text-white px-8 xl:px-10 font-montserrat text-[13px] xl:text-[14px] uppercase tracking-[0.12em] font-semibold transition-all duration-300 hover:bg-primary/90 whitespace-nowrap"
               >
-                <svg
-                  className="w-5 h-5 shrink-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.8}
-                >
+                <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                   <line x1="16" y1="2" x2="16" y2="6" />
                   <line x1="8" y1="2" x2="8" y2="6" />
@@ -325,9 +275,7 @@ export default function Hero() {
           ].map((item, i) => (
             <div
               key={i}
-              className={`flex items-start gap-3 px-5 py-5 ${
-                i < 2 ? "border-b border-white/10" : ""
-              } ${i % 2 === 0 ? "border-r border-white/10" : ""}`}
+              className={`flex items-start gap-3 px-5 py-5 ${i < 2 ? "border-b border-white/10" : ""} ${i % 2 === 0 ? "border-r border-white/10" : ""}`}
             >
               <div className="text-accent shrink-0 mt-0.5">{item.icon}</div>
               <div>
@@ -345,17 +293,11 @@ export default function Hero() {
         {/* CTA */}
         <div className="px-5 py-5 border-t border-white/10">
           <Link
-            href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+            href="https://harmony.wlbookings.com/"
             target="_blank"
             className="flex items-center justify-center gap-3 w-full bg-primary text-white font-montserrat text-[13px] uppercase rounded-lg px-6 py-4 hover:bg-primary/90 transition-colors tracking-wider font-semibold"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1.5}
-            >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
               <line x1="16" y1="2" x2="16" y2="6" />
               <line x1="8" y1="2" x2="8" y2="6" />

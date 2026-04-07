@@ -37,7 +37,18 @@ const services = [
     ],
   },
   {
-    icon: "/images/service-3.svg",
+    icon: "",
+    iconEl: (
+      <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="55" cy="68" r="30" stroke="black" strokeWidth="3.5" />
+        <circle cx="42" cy="54" r="7" stroke="black" strokeWidth="2" opacity="0.45" />
+        <circle cx="83" cy="34" r="19" stroke="black" strokeWidth="3" />
+        <circle cx="74" cy="24" r="4.5" stroke="black" strokeWidth="1.8" opacity="0.45" />
+        <circle cx="28" cy="28" r="12" stroke="black" strokeWidth="2.5" />
+        <circle cx="22" cy="22" r="3" stroke="black" strokeWidth="1.5" opacity="0.45" />
+        <circle cx="72" cy="80" r="6" stroke="black" strokeWidth="2" />
+      </svg>
+    ),
     title: "Manicura Spa & Pedicure Spa",
     description:
       "Manicura Spa: sales, exfoliante, mascarilla, limpieza de cutícula, corte y gel de color. Pedicure Spa: completo con limpieza de canales y callosidades.",
@@ -101,15 +112,21 @@ export default function Services() {
 
               {/* Icon */}
               <div className="w-[120px] h-[140px] sm:w-[143px] sm:h-[163px] mb-4 flex items-center justify-center flex-shrink-0">
-                <Image
-                  src={service.icon}
-                  alt={service.title}
-                  width={service.largeIcon ? 158 : 125}
-                  height={service.largeIcon ? 150 : 122}
-                  style={service.icon.endsWith(".png") ? {
-                    filter: "brightness(0) saturate(100%) invert(71%) sepia(35%) saturate(320%) hue-rotate(350deg) brightness(93%)",
-                  } : undefined}
-                />
+                {"iconEl" in service && service.iconEl ? (
+                  <div style={{ filter: "brightness(0) saturate(100%) invert(71%) sepia(35%) saturate(320%) hue-rotate(350deg) brightness(93%)" }}>
+                    {service.iconEl}
+                  </div>
+                ) : service.icon ? (
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={service.largeIcon ? 158 : 125}
+                    height={service.largeIcon ? 150 : 122}
+                    style={service.icon.endsWith(".png") ? {
+                      filter: "brightness(0) saturate(100%) invert(71%) sepia(35%) saturate(320%) hue-rotate(350deg) brightness(93%)",
+                    } : undefined}
+                  />
+                ) : null}
               </div>
 
               {/* Title - fixed height area */}

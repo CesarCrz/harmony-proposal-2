@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -8,25 +9,45 @@ export default function Contact() {
     <section id="contacto" className="py-12 sm:py-16 md:py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-start gap-10 sm:gap-14 lg:gap-16">
-          {/* Google Maps */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full md:w-[50%] lg:w-[55%] h-[280px] sm:h-[350px] md:h-[450px] overflow-hidden flex-shrink-0"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.7442146708063!2d-103.41578412577336!3d20.598500802419302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ad9600000ee9%3A0xa7335b01160867dc!2sHarmony%20Nails%20%26%20Lashes!5e0!3m2!1ses-419!2smx!4v1771334206249!5m2!1ses-419!2smx"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Harmony Nails & Lashes - Ubicacion"
-            />
-          </motion.div>
+          {/* Google Maps — with heart decorations */}
+          <div className="relative w-full md:w-[50%] lg:w-[55%] flex-shrink-0">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="relative w-full h-[280px] sm:h-[350px] md:h-[450px] overflow-hidden"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.7442146708063!2d-103.41578412577336!3d20.598500802419302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ad9600000ee9%3A0xa7335b01160867dc!2sHarmony%20Nails%20%26%20Lashes!5e0!3m2!1ses-419!2smx!4v1771334206249!5m2!1ses-419!2smx"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Harmony Nails & Lashes - Ubicacion"
+              />
+            </motion.div>
+            {/* Heart top-left */}
+            <div className="absolute -top-5 -left-4 w-[74px] h-[74px] pointer-events-none z-10" style={{ transform: "rotate(-10deg)" }}>
+              <Image
+                src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537913/corazon3_1_wdc8jb.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+            {/* Heart bottom-right */}
+            <div className="absolute -bottom-4 -right-4 w-[68px] h-[68px] pointer-events-none z-10" style={{ transform: "rotate(10deg)" }}>
+              <Image
+                src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon2_1_kddd7x.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
 
           {/* Contact content */}
           <motion.div
@@ -79,7 +100,7 @@ export default function Contact() {
                 Enviar WhatsApp
               </Link>
               <Link
-                href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+                href="https://harmony.wlbookings.com/"
                 target="_blank"
                 className="w-full sm:w-auto text-center bg-primary text-white font-montserrat font-semibold text-[13px] sm:text-[14px] uppercase rounded-full px-6 sm:px-8 py-3.5 hover:bg-primary/90 transition-colors tracking-wider"
               >

@@ -16,8 +16,8 @@ const additionalServices = [
   },
   {
     image: "/images/polish-3.png",
-    name: "Sistema Híbrido",
-    description: "Polygel + rubber gel, mani express y gel de color liso",
+    name: "Polímeros",
+    description: "Polygel, acrílico, rubber",
   },
   {
     image: "/images/polish-4.png",

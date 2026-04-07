@@ -33,15 +33,35 @@ export default function OurStory() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex-shrink-0 w-full lg:w-auto"
           >
-            {/* Main image — aspect ratio matches photo exactly (663×704), zero cropping */}
-            <div className="w-full max-w-[500px] lg:max-w-none lg:w-[560px] xl:w-[620px] aspect-[663/704] overflow-hidden">
-              <Image
-                src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1772659286/IMG_1510_a5zdh9.png"
-                alt="Kathya y Victoria - Fundadoras"
-                width={663}
-                height={704}
-                className="w-full h-full object-cover"
-              />
+            {/* Main image — with heart decorations at corners */}
+            <div className="relative">
+              <div className="w-full max-w-[500px] lg:max-w-none lg:w-[560px] xl:w-[620px] aspect-[663/704] overflow-hidden">
+                <Image
+                  src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1772659286/IMG_1510_a5zdh9.png"
+                  alt="Kathya y Victoria - Fundadoras"
+                  width={663}
+                  height={704}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Heart top-right */}
+              <div className="absolute -top-5 -right-5 w-[72px] h-[72px] pointer-events-none z-10" style={{ transform: "rotate(12deg)" }}>
+                <Image
+                  src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon2_1_kddd7x.png"
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              {/* Heart bottom-left */}
+              <div className="absolute -bottom-4 -left-4 w-[80px] h-[80px] pointer-events-none z-10" style={{ transform: "rotate(-8deg)" }}>
+                <Image
+                  src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon1_1_zqv7bo.png"
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
             {/* Overlapping image - repositioned for better separation */}
             <motion.div

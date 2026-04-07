@@ -49,7 +49,7 @@ export default function Products() {
                 Uñas Acrílicas
               </h3>
               <Link
-                href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+                href="https://harmony.wlbookings.com/"
                 target="_blank"
                 className="border border-white text-white font-montserrat text-[12px] sm:text-[13px] lg:text-[14px] uppercase rounded-full px-6 sm:px-8 py-2.5 sm:py-3 hover:bg-primary hover:border-primary transition-colors tracking-wider"
               >

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const founders = [
@@ -10,6 +11,9 @@ const founders = [
     name: "Kathya",
     description:
       "10 años de experiencia en el mundo de las uñas. Kath es la persona que acciona, la que impulsa las decisiones. Su rapidez y pasión por el arte son lo que la caracteriza. Su sueño es llevar la esencia de Harmony a mas personas a traves de varias sucursales.",
+    heart: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon2_1_kddd7x.png",
+    heartRotate: "rotate(10deg)",
+    heartPos: "-top-5 -right-4",
   },
   {
     video: "https://res.cloudinary.com/dwoau0ajc/video/upload/v1773081621/video_vic_rajdwu.mp4",
@@ -17,6 +21,9 @@ const founders = [
     name: "Victoria",
     description:
       "7 años de experiencia en belleza profesional. Victoria es la persona que piensa, que plantea y estructura las cosas. Su visión y dedicación han sido fundamentales para el crecimiento de Harmony desde sus inicios.",
+    heart: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon1_1_zqv7bo.png",
+    heartRotate: "rotate(-8deg)",
+    heartPos: "-top-5 -left-4",
   },
 ];
 
@@ -51,8 +58,6 @@ function FounderVideo({ src, name }: { src: string; name: string }) {
         aria-label={name}
         className="w-full h-full object-cover"
       />
-
-      {/* Play icon overlay — visible only when paused */}
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <div className="w-16 h-16 rounded-full bg-white/85 flex items-center justify-center">
@@ -95,8 +100,20 @@ export default function News() {
               transition={{ duration: 0.7, delay: index * 0.2 }}
               className="group"
             >
-              <div className="mb-5 sm:mb-6">
+              {/* Video with heart decoration */}
+              <div className="relative mb-5 sm:mb-6">
                 <FounderVideo src={founder.video} name={founder.name} />
+                <div
+                  className={`absolute ${founder.heartPos} w-[70px] h-[70px] pointer-events-none z-10`}
+                  style={{ transform: founder.heartRotate }}
+                >
+                  <Image
+                    src={founder.heart}
+                    alt=""
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
 
               {/* Content */}

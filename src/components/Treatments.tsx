@@ -156,7 +156,7 @@ export default function Treatments() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <Link
-                href="https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+                href="https://harmony.wlbookings.com/"
                 target="_blank"
                 className="inline-block mt-8 sm:mt-10 bg-primary text-white font-montserrat text-[13px] sm:text-[14px] uppercase rounded-full px-8 sm:px-10 py-3.5 hover:bg-primary/90 transition-colors tracking-wider"
               >
@@ -165,22 +165,42 @@ export default function Treatments() {
             </motion.div>
           </motion.div>
 
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full lg:w-[45%] xl:w-[50%] h-[350px] sm:h-[450px] lg:h-[650px] xl:h-[704px] overflow-hidden flex-shrink-0 lg:self-center"
-          >
-            <Image
-              src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1772642049/IMG_9644_iij76j.jpg"
-              alt="Servicios Harmony"
-              width={766}
-              height={704}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
+          {/* Image — with heart decorations */}
+          <div className="relative w-full lg:w-[45%] xl:w-[50%] flex-shrink-0 lg:self-center">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full h-[350px] sm:h-[450px] lg:h-[650px] xl:h-[704px] overflow-hidden"
+            >
+              <Image
+                src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1772642049/IMG_9644_iij76j.jpg"
+                alt="Servicios Harmony"
+                width={766}
+                height={704}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            {/* Heart top-left */}
+            <div className="absolute -top-5 -left-4 w-[76px] h-[76px] pointer-events-none z-10" style={{ transform: "rotate(-12deg)" }}>
+              <Image
+                src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537913/corazon3_1_wdc8jb.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+            {/* Heart bottom-right */}
+            <div className="absolute -bottom-4 -right-3 w-[70px] h-[70px] pointer-events-none z-10" style={{ transform: "rotate(8deg)" }}>
+              <Image
+                src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon1_1_zqv7bo.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
