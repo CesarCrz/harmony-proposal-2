@@ -33,7 +33,7 @@ export default function OurStory() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex-shrink-0 w-full lg:w-auto"
           >
-            {/* Main image — with heart decorations at corners */}
+            {/* Main image */}
             <div className="relative">
               <div className="w-full max-w-[500px] lg:max-w-none lg:w-[560px] xl:w-[620px] aspect-[663/704] overflow-hidden">
                 <Image
@@ -42,24 +42,6 @@ export default function OurStory() {
                   width={663}
                   height={704}
                   className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Heart top-right */}
-              <div className="absolute -top-5 -right-5 w-[72px] h-[72px] pointer-events-none z-10" style={{ transform: "rotate(12deg)" }}>
-                <Image
-                  src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon2_1_kddd7x.png"
-                  alt=""
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              {/* Heart bottom-left */}
-              <div className="absolute -bottom-4 -left-4 w-[80px] h-[80px] pointer-events-none z-10" style={{ transform: "rotate(-8deg)" }}>
-                <Image
-                  src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon1_1_zqv7bo.png"
-                  alt=""
-                  fill
-                  className="object-contain"
                 />
               </div>
             </div>
@@ -114,9 +96,20 @@ export default function OurStory() {
             <span className="font-inter text-[12px] sm:text-[13px] text-primary uppercase tracking-[0.2em]">
               Quienes somos
             </span>
-            <h2 className="font-montserrat font-semibold text-2xl sm:text-3xl lg:text-[40px] text-primary uppercase mt-3 mb-6 lg:mb-8">
-              Nuestra Historia
-            </h2>
+            <div className="relative inline-block mt-3 mb-6 lg:mb-8">
+              <h2 className="font-montserrat font-semibold text-2xl sm:text-3xl lg:text-[40px] text-primary uppercase">
+                Nuestra Historia
+              </h2>
+              {/* Heart at right edge of title */}
+              <div className="absolute -top-4 -right-10 w-[44px] h-[44px] pointer-events-none" style={{ transform: "rotate(10deg)" }}>
+                <Image
+                  src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537911/corazon2_1_kddd7x.png"
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
             <div className="font-montserrat text-[14px] sm:text-[16px] leading-[24px] sm:leading-[27px] text-muted space-y-5 max-w-[440px]">
               <p>
                 Harmony nació de algo espontáneo. Kathya y Victoria se conocieron trabajando juntas, pero el ambiente comenzó a pesarles. Fue Kath quien tomó la decisión de salir, y Victoria se sumó sin pensarlo dos veces. Con el apoyo de sus familias y años de experiencia en el gremio, se lanzaron a crear algo propio.
@@ -138,12 +131,23 @@ export default function OurStory() {
               viewport={{ once: false, amount: 0.5 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Link
-                href="#contacto"
-                className="inline-block mt-8 bg-primary text-white font-montserrat text-[13px] sm:text-[14px] uppercase rounded-full px-8 sm:px-10 py-3.5 hover:bg-primary/90 transition-colors tracking-wider"
-              >
-                Conoce Mas
-              </Link>
+              <div className="relative inline-block mt-8">
+                <Link
+                  href="#contacto"
+                  className="inline-block bg-primary text-white font-montserrat text-[13px] sm:text-[14px] uppercase rounded-full px-8 sm:px-10 py-3.5 hover:bg-primary/90 transition-colors tracking-wider"
+                >
+                  Conoce Mas
+                </Link>
+                {/* Heart at button corner */}
+                <div className="absolute -top-3 -right-3 w-[32px] h-[32px] pointer-events-none" style={{ transform: "rotate(20deg)" }}>
+                  <Image
+                    src="https://res.cloudinary.com/dwoau0ajc/image/upload/v1775537913/corazon3_1_wdc8jb.png"
+                    alt=""
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

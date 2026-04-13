@@ -60,7 +60,7 @@ const services = [
       },
       {
         question: "¿Qué incluye el Pedicure Spa?",
-        answer: "Sales, exfoliante, mascarilla, limpieza de canales, cutícula, callosidades y gel de color liso.",
+        answer: "Sales, exfoliante, mascarilla, limpieza de canales, limpieza de callosidades, corte, cuadratura, removedor de cutícula y gel de color liso",
       },
     ],
   },
