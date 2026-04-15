@@ -179,7 +179,7 @@ export default function Hero() {
                   ),
                   label: "WhatsApp",
                   value: "3310450389",
-                  href: "https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
+                  href: "https://wa.me/523310450389?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
                 },
                 {
                   icon: (
@@ -283,8 +283,8 @@ export default function Hero() {
                 </svg>
               ),
               label: "WhatsApp",
-              value: "332 920 3141",
-              href: "https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
+              value: "331 045 0389",
+              href: "https://wa.me/523310450389?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
             },
             {
               icon: (
