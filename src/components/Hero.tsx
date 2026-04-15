@@ -157,6 +157,7 @@ export default function Hero() {
                   ),
                   label: "Horario",
                   value: "Lun - Sáb: 10AM - 7PM",
+                  href: null,
                 },
                 {
                   icon: (
@@ -167,6 +168,7 @@ export default function Hero() {
                   ),
                   label: "Ubicación",
                   value: "Av. Agrícola 641 L1, Tlaquepaque",
+                  href: "https://www.google.com/maps/place/Harmony+Nails+%26+Lashes/@20.5985008,-103.4157841,17z/data=!3m1!4b1!4m6!3m5!1s0x8428ad9600000ee9:0xa7335b01160867dc!8m2!3d20.5984958!4d-103.4132092!16s%2Fg%2F11myrjy31k",
                 },
                 {
                   icon: (
@@ -176,7 +178,8 @@ export default function Hero() {
                     </svg>
                   ),
                   label: "WhatsApp",
-                  value: "332 920 3141",
+                  value: "3310450389",
+                  href: "https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
                 },
                 {
                   icon: (
@@ -186,23 +189,40 @@ export default function Hero() {
                   ),
                   label: "Garantía",
                   value: "3 días en uñas y pestañas",
+                  href: null,
                 },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex-1 flex items-center gap-4 px-6 xl:px-8 py-6 border-r border-white/10 last:border-r-0 group transition-colors duration-300 hover:bg-white/5"
-                >
-                  <div className="text-accent">{item.icon}</div>
-                  <div>
-                    <span className="font-inter font-semibold text-[11px] xl:text-[12px] text-accent uppercase tracking-[0.15em] block mb-0.5">
-                      {item.label}
-                    </span>
-                    <p className="font-inter text-[13px] xl:text-[14px] text-white/80 leading-snug">
-                      {item.value}
-                    </p>
+              ].map((item, i) => {
+                const inner = (
+                  <>
+                    <div className="text-accent">{item.icon}</div>
+                    <div>
+                      <span className="font-inter font-semibold text-[11px] xl:text-[12px] text-accent uppercase tracking-[0.15em] block mb-0.5">
+                        {item.label}
+                      </span>
+                      <p className="font-inter text-[13px] xl:text-[14px] text-white/80 leading-snug">
+                        {item.value}
+                      </p>
+                    </div>
+                  </>
+                );
+                return item.href ? (
+                  <Link
+                    key={i}
+                    href={item.href}
+                    target="_blank"
+                    className="flex-1 flex items-center gap-4 px-6 xl:px-8 py-6 border-r border-white/10 last:border-r-0 group transition-colors duration-300 hover:bg-white/5"
+                  >
+                    {inner}
+                  </Link>
+                ) : (
+                  <div
+                    key={i}
+                    className="flex-1 flex items-center gap-4 px-6 xl:px-8 py-6 border-r border-white/10 last:border-r-0 group transition-colors duration-300 hover:bg-white/5"
+                  >
+                    {inner}
                   </div>
-                </div>
-              ))}
+                );
+              })}
 
               {/* CTA Button */}
               <Link
@@ -242,6 +262,7 @@ export default function Hero() {
               ),
               label: "Horario",
               value: "Lun - Vie: 10AM - 7PM",
+              href: null,
             },
             {
               icon: (
@@ -252,6 +273,7 @@ export default function Hero() {
               ),
               label: "Ubicacion",
               value: "Guadalajara Sur",
+              href: "https://www.google.com/maps/place/Harmony+Nails+%26+Lashes/@20.5985008,-103.4157841,17z/data=!3m1!4b1!4m6!3m5!1s0x8428ad9600000ee9:0xa7335b01160867dc!8m2!3d20.5984958!4d-103.4132092!16s%2Fg%2F11myrjy31k",
             },
             {
               icon: (
@@ -262,6 +284,7 @@ export default function Hero() {
               ),
               label: "WhatsApp",
               value: "332 920 3141",
+              href: "https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
             },
             {
               icon: (
@@ -271,23 +294,33 @@ export default function Hero() {
               ),
               label: "Garantia",
               value: "3 dias en uñas y pestañas",
+              href: null,
             },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className={`flex items-start gap-3 px-5 py-5 ${i < 2 ? "border-b border-white/10" : ""} ${i % 2 === 0 ? "border-r border-white/10" : ""}`}
-            >
-              <div className="text-accent shrink-0 mt-0.5">{item.icon}</div>
-              <div>
-                <span className="font-inter font-semibold text-[11px] sm:text-[12px] text-accent uppercase tracking-wider block">
-                  {item.label}
-                </span>
-                <p className="font-inter text-[12px] sm:text-[13px] text-white/70 mt-0.5">
-                  {item.value}
-                </p>
+          ].map((item, i) => {
+            const cls = `flex items-start gap-3 px-5 py-5 ${i < 2 ? "border-b border-white/10" : ""} ${i % 2 === 0 ? "border-r border-white/10" : ""}`;
+            const inner = (
+              <>
+                <div className="text-accent shrink-0 mt-0.5">{item.icon}</div>
+                <div>
+                  <span className="font-inter font-semibold text-[11px] sm:text-[12px] text-accent uppercase tracking-wider block">
+                    {item.label}
+                  </span>
+                  <p className="font-inter text-[12px] sm:text-[13px] text-white/70 mt-0.5">
+                    {item.value}
+                  </p>
+                </div>
+              </>
+            );
+            return item.href ? (
+              <Link key={i} href={item.href} target="_blank" className={cls}>
+                {inner}
+              </Link>
+            ) : (
+              <div key={i} className={cls}>
+                {inner}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA */}

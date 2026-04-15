@@ -5,22 +5,22 @@ import { motion } from "framer-motion";
 
 const additionalServices = [
   {
-    image: "/images/polish-1.png",
+    image: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1776223537/rubber_gel_d1mopa.png",
     name: "Rubber Gel",
     description: "Nivelación en uña natural con mani express y gel color liso",
   },
   {
-    image: "/images/polish-2.png",
+    image: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1776223537/nail_color_gel_upii8m.png",
     name: "Gel Semi Permanente",
     description: "Gel de color liso sobre uña natural",
   },
   {
-    image: "/images/polish-3.png",
+    image: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1776223750/polygel_okwbgm.png",
     name: "Polímeros",
     description: "Polygel, acrílico, rubber",
   },
   {
-    image: "/images/polish-4.png",
+    image: "https://res.cloudinary.com/dwoau0ajc/image/upload/v1776223537/punta_russa_zz3fc9.png",
     name: "Manicura Russa",
     description: "Limpieza de cutícula profunda en seco y gel de color liso",
   },
