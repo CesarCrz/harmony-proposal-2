@@ -35,6 +35,7 @@ export default function Header() {
     { label: "Nosotros", href: "#nosotros" },
     { label: "Galeria", href: "#galeria" },
     { label: "Contacto", href: "#contacto" },
+    { label: "Bolsa de Trabajo", href: "#vacante" },
   ];
 
   return (

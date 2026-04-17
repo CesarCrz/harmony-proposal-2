@@ -125,13 +125,20 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
+            className="flex flex-col sm:flex-row items-center gap-3 mt-7"
           >
             <Link
               href="https://harmony.wlbookings.com/"
               target="_blank"
-              className="inline-block mt-7 bg-white text-foreground font-montserrat text-[13px] sm:text-[14px] uppercase rounded-full px-8 py-3.5 hover:bg-white/90 transition-colors tracking-wider font-semibold"
+              className="inline-block bg-white text-foreground font-montserrat text-[13px] sm:text-[14px] uppercase rounded-full px-8 py-3.5 hover:bg-white/90 transition-colors tracking-wider font-semibold"
             >
               Agendar Cita
+            </Link>
+            <Link
+              href="#vacante"
+              className="inline-block border border-white text-white font-montserrat text-[13px] sm:text-[14px] uppercase rounded-full px-8 py-3.5 hover:bg-white hover:text-foreground transition-colors tracking-wider font-semibold"
+            >
+              Bolsa de Trabajo
             </Link>
           </motion.div>
         </div>
@@ -324,7 +331,7 @@ export default function Hero() {
         </div>
 
         {/* CTA */}
-        <div className="px-5 py-5 border-t border-white/10">
+        <div className="px-5 py-5 border-t border-white/10 flex flex-col gap-3">
           <Link
             href="https://harmony.wlbookings.com/"
             target="_blank"
@@ -337,6 +344,16 @@ export default function Hero() {
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
             Agendar Cita
+          </Link>
+          <Link
+            href="#vacante"
+            className="flex items-center justify-center gap-2 w-full border border-white/40 text-white font-montserrat text-[13px] uppercase rounded-lg px-6 py-3.5 hover:bg-white/10 transition-colors tracking-wider font-semibold"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+            </svg>
+            Bolsa de Trabajo Harmony
           </Link>
         </div>
       </motion.div>
