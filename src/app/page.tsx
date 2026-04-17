@@ -8,6 +8,7 @@ import Products from "@/components/Products";
 import News from "@/components/News";
 import FollowUs from "@/components/FollowUs";
 import Contact from "@/components/Contact";
+import JobWizard from "@/components/JobWizard";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
@@ -25,6 +26,7 @@ export default function Home() {
         <News />
         <FollowUs />
         <Contact />
+        <JobWizard />
       </main>
       <Footer />
       <FloatingWhatsApp />
