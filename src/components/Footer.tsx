@@ -60,7 +60,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-2 font-montserrat text-[14px] sm:text-[16px] text-white/70 leading-[25px]">
               <p>Tel: 3310450389</p>
-              <p>WhatsApp: 3329203141</p>
+              <p>WhatsApp: 3310450389</p>
               <p>Av. Agricola 641 Local 1, Parques del Bosque, San Pedro Tlaquepaque, 45609 Guadalajara, Jal.</p>
             </div>
             <div className="mt-4 space-y-1 font-montserrat text-[12px] sm:text-[14px] text-white/60">
