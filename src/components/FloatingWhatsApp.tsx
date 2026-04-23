@@ -25,7 +25,7 @@ const buttons = [
     ),
   },
   {
-    href: "https://wa.me/523329203141?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
+    href: "https://wa.me/523310450389?text=Hola%20buen%20d%C3%ADa%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita",
     label: "Contactar por WhatsApp",
     delay: 2,
     icon: (
