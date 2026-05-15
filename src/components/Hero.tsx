@@ -64,7 +64,7 @@ export default function Hero() {
         {/* ===== SLOGAN OVERLAY - Desktop ===== */}
         <div className="hidden lg:flex absolute inset-0 z-20 items-end pb-16">
           <div className="max-w-7xl mx-auto px-8 w-full">
-            <div className="max-w-[500px]">
+            <div className="max-w-[300px] xl:max-w-[400px]">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

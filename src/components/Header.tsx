@@ -53,16 +53,12 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span
-            className={`font-montserrat font-bold text-[20px] sm:text-[22px] transition-colors duration-500 ${
-              scrolled ? "text-foreground" : "text-white"
-            }`}
+            className={`font-montserrat font-bold text-[20px] sm:text-[22px] transition-colors duration-500 text-foreground`}
           >
             Harmony
           </span>
           <span
-            className={`font-montserrat text-[11px] sm:text-[12px] tracking-wide transition-colors duration-500 ${
-              scrolled ? "text-muted" : "text-white/80"
-            }`}
+            className={`font-montserrat text-[11px] sm:text-[12px] tracking-wide transition-colors duration-500 text-muted`}
           >
             Nails & Lashes
           </span>
@@ -74,9 +70,7 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className={`font-montserrat text-[15px] transition-colors duration-500 hover:text-primary ${
-                scrolled ? "text-foreground" : "text-white"
-              }`}
+              className={`font-montserrat text-[15px] transition-colors duration-500 hover:text-primary text-foreground`}
             >
               {link.label}
             </Link>
@@ -90,7 +84,7 @@ export default function Header() {
           className={`hidden lg:inline-flex items-center gap-1.5 rounded-full px-7 py-2.5 font-montserrat text-[13px] uppercase tracking-wider transition-all duration-500 ${
             scrolled
               ? "bg-primary text-white hover:bg-primary/90"
-              : "border border-white text-white hover:bg-primary hover:border-primary"
+              : "border border-foreground/30 text-foreground hover:bg-primary hover:text-white hover:border-primary"
           }`}
         >
           <Image
@@ -112,17 +106,17 @@ export default function Header() {
           <div className="relative w-6 h-4">
             <span
               className={`absolute left-0 w-6 h-0.5 transition-all duration-300 ${
-                scrolled ? "bg-foreground" : "bg-white"
+                scrolled ? "bg-foreground" : "bg-foreground"
               } ${isOpen ? "top-[7px] rotate-45" : "top-0"}`}
             />
             <span
               className={`absolute left-0 top-[7px] w-6 h-0.5 transition-all duration-300 ${
-                scrolled ? "bg-foreground" : "bg-white"
+                scrolled ? "bg-foreground" : "bg-foreground"
               } ${isOpen ? "opacity-0" : "opacity-100"}`}
             />
             <span
               className={`absolute left-0 w-6 h-0.5 transition-all duration-300 ${
-                scrolled ? "bg-foreground" : "bg-white"
+                scrolled ? "bg-foreground" : "bg-foreground"
               } ${isOpen ? "top-[7px] -rotate-45" : "top-[14px]"}`}
             />
           </div>
